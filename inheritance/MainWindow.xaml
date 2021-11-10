@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inheritance"
         mc:Ignorable="d"
-        Title="MainWindow" Height="321.504" Width="639.2">
+        Title="MainWindow" Height="321.504" Width="850.4">
     <Grid>
         <Button x:Name="fill" Content="Заполнить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="613" Margin="10,0,0,0" Height="51" Click="fill_Click"/>
         <TextBlock x:Name="infoBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="252,88,0,0" Height="34" Width="371"/>
-        <Rectangle x:Name="Imagane" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="170" Stroke="Black" VerticalAlignment="Top" Width="210" Margin="10,88,0,0"/>
         <Button x:Name="take" Content="Получить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="371" Margin="252,198,0,0" Height="60" Click="Take_Click"/>
         <TextBlock x:Name="takeInfoBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="252,127,0,0" Height="40" Width="371"/>
+        <TextBlock x:Name="list" HorizontalAlignment="Left" Margin="642,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="258" Width="192"/>
+        <Image x:Name="Images" HorizontalAlignment="Left" Height="194" Margin="10,88,0,0" VerticalAlignment="Top" Width="221"/>
 
     </Grid>
 </Window>

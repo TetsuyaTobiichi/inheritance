@@ -35,7 +35,7 @@ namespace inheritance
                 switch (rnd.Next() % 3)
                 {
                     case 0:
-                        techList.Add(new Laptops());
+                        techList.Add(new Laptop());
                         break;
                     case 1:
                         techList.Add(new Smartphone());
@@ -49,23 +49,27 @@ namespace inheritance
         }
         protected void Sum()
         {
-            byte phones = 0, laptops = 0, tablet = 0;
+            list.Text = string.Empty;
+            byte phones = 0, laptops = 0, tablets = 0;
             foreach(var tech in techList)
             {
-                if(tech is Laptops)
+                if(tech is Laptop)
                 {
                     laptops++;
+                    list.Text += $"ноутбук №{laptops}\n";
                 }
                 else if(tech is Tablet)
                 {
-                    tablet++;
+                    tablets++;
+                    list.Text += $"планшет №{tablets}\n";
                 }
                 else if(tech is Smartphone)
                 {
                     phones++;
+                    list.Text += $"телефон №{phones} \n";
                 }
             }
-            infoBox.Text = $"кол-во ноутбуков {laptops} кол-во планшетов {tablet} кол-во смартфонов {phones}";
+            infoBox.Text = $"ноутбуков {laptops}  планшетов {tablets}  смартфонов {phones}";
         }
         private void Take_Click(object sender, RoutedEventArgs e)
         {
@@ -79,6 +83,8 @@ namespace inheritance
                 this.techList.RemoveAt(0);
                 takeInfoBox.Text = temp.getInfo();
                 Sum();
+                string nameOfGadget = temp is Smartphone ? "Phone" : temp is Laptop ? "Laptop" : "Tablet";
+                Images.Source = new BitmapImage(new Uri($@"C:\Users\reven\Source\Repos\inheritance\inheritance\{nameOfGadget}.jpg"));
             }
         }
     }

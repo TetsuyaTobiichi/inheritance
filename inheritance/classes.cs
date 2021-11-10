@@ -16,12 +16,12 @@ namespace inheritance
         }
 
     }
-    public class Laptops : Gadget
+    public class Laptop : Gadget
     {
         byte cores = 0;
         int memory = 0;
         string bluetooth = string.Empty;
-        public Laptops()
+        public Laptop()
         {
             this.cores = (byte)(6 + rnd.Next() % 7);
             this.memory = rnd.Next() % 2049;
@@ -29,7 +29,6 @@ namespace inheritance
         }
         public override string getInfo()
         {   
-
             return $"{cores} ядер, {memory} GB памяти, bluetooth {bluetooth}, "+base.getInfo();
         }
     }
