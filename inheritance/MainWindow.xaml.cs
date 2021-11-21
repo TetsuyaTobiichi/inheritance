@@ -26,7 +26,7 @@ namespace inheritance
             InitializeComponent();
             Sum();
         }
-        private void fill_Click(object sender, RoutedEventArgs e)
+        protected void fill_Click(object sender, RoutedEventArgs e)
         {
             techList.Clear();
             var rnd = new Random();
@@ -76,15 +76,17 @@ namespace inheritance
             if (this.techList.Count == 0)
             {
                 infoBox.Text = "Автомат пуст";
+                Images.Source = null;
+                takeInfoBox.Text = "";
             }
             else
             {
-                var temp = this.techList[0];
-                this.techList.RemoveAt(0);
-                takeInfoBox.Text = temp.getInfo();
-                Sum();
-                string nameOfGadget = temp is Smartphone ? "Phone" : temp is Laptop ? "Laptop" : "Tablet";
+                
+                takeInfoBox.Text = this.techList[0].getInfo();
+                string nameOfGadget = techList[0] is Smartphone ? "Phone" : techList[0] is Laptop ? "Laptop" : "Tablet";
                 Images.Source = new BitmapImage(new Uri($@"C:\Users\reven\Source\Repos\inheritance\inheritance\{nameOfGadget}.jpg"));
+                this.techList.RemoveAt(0);
+                Sum();
             }
         }
     }
