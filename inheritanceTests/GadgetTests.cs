@@ -11,8 +11,9 @@ namespace inheritance.Tests
     [TestClass()]
     public class GadgetTests
     {
+        //Тестирование заполнения
         [TestMethod()]
-        public void getInfoTest()
+        public void listLoadTest()
         {
             List<Gadget> techList = new List<Gadget>();
             techList.Clear();
@@ -34,6 +35,13 @@ namespace inheritance.Tests
             }
             test = techList[3] is Laptop ? "Laptop" : "ошибка";
             Assert.AreEqual(test, "Laptop");
+        }
+        //тестирование конструктора
+        [TestMethod()]
+        public void constructorTest()
+        {
+            Laptop test = new Laptop("test");
+            Assert.AreEqual(test.getInfo(), "10 ядер, 2048 GB памяти, bluetooth есть, разрешение экрана 240");
         }
     }
 }

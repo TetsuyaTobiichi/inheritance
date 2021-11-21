@@ -23,9 +23,16 @@ namespace inheritance
         string bluetooth = string.Empty;
         public Laptop()
         {
-            this.cores = (byte)(6 + rnd.Next() % 7);
-            this.memory = rnd.Next() % 2049;
-            this.bluetooth = rnd.Next() % 2 == 0 ? "есть" : "нет";
+            cores = (byte)(6 + rnd.Next() % 7);
+            memory = rnd.Next() % 2049;
+            bluetooth = rnd.Next() % 2 == 0 ? "есть" : "нет";
+        }
+        public Laptop(string forTest) 
+        {
+            cores = 10;
+            memory = 2048;
+            bluetooth = "есть";
+            resolution = 280;
         }
         public override string getInfo()
         {   
@@ -53,9 +60,9 @@ namespace inheritance
         int battery = 0;
       public Smartphone()
         {
-            this.simslots = (byte)(1 + rnd.Next() % 2);
-            this.megapixels = (byte)(5 + rnd.Next() % 47);
-            this.battery = (1200+rnd.Next() % 2001);
+            simslots = (byte)(1 + rnd.Next() % 2);
+            megapixels = (byte)(5 + rnd.Next() % 47);
+            battery = (1200+rnd.Next() % 2001);
         }
         public override string getInfo()
         {
